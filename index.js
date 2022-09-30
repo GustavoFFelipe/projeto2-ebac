@@ -4,6 +4,12 @@ let linhas = '';
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
 
+    adicionaLinha();
+    atualizaTabela();
+})
+
+function adicionaLinha(){
+
     const name = document.getElementById('name');
     const number = document.getElementById('number'); 
 
@@ -13,7 +19,8 @@ form.addEventListener('submit', (e)=>{
     linha += `</tr>`;
 
     linhas += linha;
-
+}
+function atualizaTabela(){
     const corpoTabela = document.querySelector('tbody');
     corpoTabela.innerHTML = linhas;
-})
+}
